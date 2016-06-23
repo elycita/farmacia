@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMedicamentoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_medicamentoID}" for="medicamentoID" />
+                    <h:inputText id="medicamentoID" value="#{medicamentoController.selected.medicamentoID}" title="#{bundle.CreateMedicamentoTitle_medicamentoID}" required="true" requiredMessage="#{bundle.CreateMedicamentoRequiredMessage_medicamentoID}"/>
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{medicamentoController.selected.nombre}" title="#{bundle.CreateMedicamentoTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{medicamentoController.selected.descripcion}" title="#{bundle.CreateMedicamentoTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_cantidad}" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{medicamentoController.selected.cantidad}" title="#{bundle.CreateMedicamentoTitle_cantidad}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{medicamentoController.selected.precio}" title="#{bundle.CreateMedicamentoTitle_precio}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_stock}" for="stock" />
+                    <h:inputText id="stock" value="#{medicamentoController.selected.stock}" title="#{bundle.CreateMedicamentoTitle_stock}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_strockMinimo}" for="strockMinimo" />
+                    <h:inputText id="strockMinimo" value="#{medicamentoController.selected.strockMinimo}" title="#{bundle.CreateMedicamentoTitle_strockMinimo}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_stockMaximo}" for="stockMaximo" />
+                    <h:inputText id="stockMaximo" value="#{medicamentoController.selected.stockMaximo}" title="#{bundle.CreateMedicamentoTitle_stockMaximo}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_bajoreceta}" for="bajoreceta" />
+                    <h:inputText id="bajoreceta" value="#{medicamentoController.selected.bajoreceta}" title="#{bundle.CreateMedicamentoTitle_bajoreceta}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_fechaVencimiento}" for="fechaVencimiento" />
+                    <h:inputText id="fechaVencimiento" value="#{medicamentoController.selected.fechaVencimiento}" title="#{bundle.CreateMedicamentoTitle_fechaVencimiento}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_unidadMedida}" for="unidadMedida" />
+                    <h:inputText id="unidadMedida" value="#{medicamentoController.selected.unidadMedida}" title="#{bundle.CreateMedicamentoTitle_unidadMedida}" />
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_laboratorioID}" for="laboratorioID" />
+                    <h:selectOneMenu id="laboratorioID" value="#{medicamentoController.selected.laboratorioID}" title="#{bundle.CreateMedicamentoTitle_laboratorioID}" >
+                        <f:selectItems value="#{laboratorioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateMedicamentoLabel_categoriaID}" for="categoriaID" />
+                    <h:selectOneMenu id="categoriaID" value="#{medicamentoController.selected.categoriaID}" title="#{bundle.CreateMedicamentoTitle_categoriaID}" >
+                        <f:selectItems value="#{categoriaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{medicamentoController.create}" value="#{bundle.CreateMedicamentoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{medicamentoController.prepareList}" value="#{bundle.CreateMedicamentoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMedicamentoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

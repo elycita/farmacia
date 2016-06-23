@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDetallepedidoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListDetallepedidoEmpty}" rendered="#{detallepedidoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{detallepedidoController.items.rowCount > 0}">
+                    <h:outputText value="#{detallepedidoController.pagination.pageFirstItem + 1}..#{detallepedidoController.pagination.pageLastItem + 1}/#{detallepedidoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{detallepedidoController.previous}" value="#{bundle.Previous} #{detallepedidoController.pagination.pageSize}" rendered="#{detallepedidoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{detallepedidoController.next}" value="#{bundle.Next} #{detallepedidoController.pagination.pageSize}" rendered="#{detallepedidoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{detallepedidoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_detallePedidoID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.detallePedidoID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_cantidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cantidad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_precioUnitario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.precioUnitario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_pedidoID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pedidoID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_ventaID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ventaID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetallepedidoTitle_medicamentoID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.medicamentoID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{detallepedidoController.prepareView}" value="#{bundle.ListDetallepedidoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{detallepedidoController.prepareEdit}" value="#{bundle.ListDetallepedidoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{detallepedidoController.destroy}" value="#{bundle.ListDetallepedidoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{detallepedidoController.prepareCreate}" value="#{bundle.ListDetallepedidoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListDetallepedidoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

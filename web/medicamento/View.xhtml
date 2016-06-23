@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMedicamentoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_medicamentoID}"/>
+                    <h:outputText value="#{medicamentoController.selected.medicamentoID}" title="#{bundle.ViewMedicamentoTitle_medicamentoID}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_nombre}"/>
+                    <h:outputText value="#{medicamentoController.selected.nombre}" title="#{bundle.ViewMedicamentoTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_descripcion}"/>
+                    <h:outputText value="#{medicamentoController.selected.descripcion}" title="#{bundle.ViewMedicamentoTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_cantidad}"/>
+                    <h:outputText value="#{medicamentoController.selected.cantidad}" title="#{bundle.ViewMedicamentoTitle_cantidad}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_precio}"/>
+                    <h:outputText value="#{medicamentoController.selected.precio}" title="#{bundle.ViewMedicamentoTitle_precio}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_stock}"/>
+                    <h:outputText value="#{medicamentoController.selected.stock}" title="#{bundle.ViewMedicamentoTitle_stock}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_strockMinimo}"/>
+                    <h:outputText value="#{medicamentoController.selected.strockMinimo}" title="#{bundle.ViewMedicamentoTitle_strockMinimo}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_stockMaximo}"/>
+                    <h:outputText value="#{medicamentoController.selected.stockMaximo}" title="#{bundle.ViewMedicamentoTitle_stockMaximo}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_bajoreceta}"/>
+                    <h:outputText value="#{medicamentoController.selected.bajoreceta}" title="#{bundle.ViewMedicamentoTitle_bajoreceta}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_fechaVencimiento}"/>
+                    <h:outputText value="#{medicamentoController.selected.fechaVencimiento}" title="#{bundle.ViewMedicamentoTitle_fechaVencimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_unidadMedida}"/>
+                    <h:outputText value="#{medicamentoController.selected.unidadMedida}" title="#{bundle.ViewMedicamentoTitle_unidadMedida}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_laboratorioID}"/>
+                    <h:outputText value="#{medicamentoController.selected.laboratorioID}" title="#{bundle.ViewMedicamentoTitle_laboratorioID}"/>
+                    <h:outputText value="#{bundle.ViewMedicamentoLabel_categoriaID}"/>
+                    <h:outputText value="#{medicamentoController.selected.categoriaID}" title="#{bundle.ViewMedicamentoTitle_categoriaID}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{medicamentoController.destroyAndView}" value="#{bundle.ViewMedicamentoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMedicamentoEditLink}"/>
+                <br />
+                <h:commandLink action="#{medicamentoController.prepareCreate}" value="#{bundle.ViewMedicamentoCreateLink}" />
+                <br />
+                <h:commandLink action="#{medicamentoController.prepareList}" value="#{bundle.ViewMedicamentoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMedicamentoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
