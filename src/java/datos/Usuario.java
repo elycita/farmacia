@@ -132,7 +132,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Usuario[ usuarioID=" + usuarioID + " ]";
+        return usuarioID + nombre ;
     }
     
 }

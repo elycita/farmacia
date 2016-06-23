@@ -118,7 +118,7 @@ public class Detallecompra implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Detallecompra[ detalleCompraID=" + detalleCompraID + " ]";
+        return detalleCompraID + "";
     }
     
 }

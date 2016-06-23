@@ -98,7 +98,9 @@ public class Categoria implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Categoria[ categoriaID=" + categoriaID + " ]";
+       
+        //return "datos.Categoria[ categoriaID=" + categoriaID + " ]";
+        return nombre ;
     }
     
 }

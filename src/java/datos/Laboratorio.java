@@ -98,7 +98,7 @@ public class Laboratorio implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Laboratorio[ laboratorioID=" + laboratorioID + " ]";
+        return nombre;
     }
     
 }

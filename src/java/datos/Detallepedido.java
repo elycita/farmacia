@@ -129,7 +129,7 @@ public class Detallepedido implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Detallepedido[ detallePedidoID=" + detallePedidoID + " ]";
+        return  detallePedidoID + "";
     }
     
 }

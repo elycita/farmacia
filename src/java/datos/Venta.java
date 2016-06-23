@@ -124,7 +124,7 @@ public class Venta implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Venta[ ventaID=" + ventaID + " ]";
+        return ventaID + "";
     }
     
 }

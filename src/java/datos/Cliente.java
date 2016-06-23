@@ -133,7 +133,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Cliente[ clienteID=" + clienteID + " ]";
+        return  clienteID + " " + nombre;
     }
     
 }

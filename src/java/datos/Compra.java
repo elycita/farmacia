@@ -160,7 +160,7 @@ public class Compra implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Compra[ compraID=" + compraID + " ]";
+        return  compraID +  " " ;
     }
     
 }

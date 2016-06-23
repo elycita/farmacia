@@ -120,7 +120,7 @@ public class Proveedor implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Proveedor[ proveedorID=" + proveedorID + " ]";
+        return proveedorID + nombre ;
     }
     
 }

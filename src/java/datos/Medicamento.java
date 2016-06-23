@@ -240,7 +240,7 @@ public class Medicamento implements Serializable {
 
     @Override
     public String toString() {
-        return "datos.Medicamento[ medicamentoID=" + medicamentoID + " ]";
+        return  medicamentoID + nombre;
     }
     
 }
