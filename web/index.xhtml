@@ -1,33 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>INGENIERIA DE SOFTWARE II</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
+     
+            
+          <h1>
+            <ui:insert name="title">       Administracion de Productos de Farmacia "FARMHOGAR"</ui:insert>
+        </h1>
+        <br />
         
+        
+        <h:link outcome="/categoria/List" value="Gestionar Categoria"/>
         <br />
-        <h:link outcome="/categoria/List" value="Show All Categoria Items"/>
+        <h:link outcome="/cliente/List" value="Gestionar Cliente"/>
         <br />
-        <h:link outcome="/cliente/List" value="Show All Cliente Items"/>
+        <h:link outcome="/compra/List" value="Gestionar Compra"/>
         <br />
-        <h:link outcome="/compra/List" value="Show All Compra Items"/>
+        <h:link outcome="/detallecompra/List" value="Registrar detalle de compra"/>
         <br />
-        <h:link outcome="/detallecompra/List" value="Show All Detallecompra Items"/>
+        <h:link outcome="/detallepedido/List" value="Registrar detalle de pedido"/>
         <br />
-        <h:link outcome="/detallepedido/List" value="Show All Detallepedido Items"/>
+        <h:link outcome="/laboratorio/List" value="Gestionar laboratorio"/>
         <br />
-        <h:link outcome="/laboratorio/List" value="Show All Laboratorio Items"/>
+        <h:link outcome="/medicamento/List" value="Gestionar Medicamento"/>
         <br />
-        <h:link outcome="/medicamento/List" value="Show All Medicamento Items"/>
+        <h:link outcome="/proveedor/List" value="Gestionar Proveedor"/>
         <br />
-        <h:link outcome="/proveedor/List" value="Show All Proveedor Items"/>
+        <h:link outcome="/usuario/List" value="Gestionar Usuario"/>
         <br />
-        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
-        <br />
-        <h:link outcome="/venta/List" value="Show All Venta Items"/>
+        <h:link outcome="/venta/List" value="Gestionar Venta"/>
+        
+   
     </h:body>
 
 
