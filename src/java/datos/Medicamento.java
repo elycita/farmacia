@@ -240,7 +240,7 @@ public class Medicamento implements Serializable {
 
     @Override
     public String toString() {
-        return  medicamentoID + nombre;
+        return  medicamentoID + " "+ nombre;
     }
     
 }
